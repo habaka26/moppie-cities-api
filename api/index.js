@@ -1,9 +1,8 @@
-
 const fetch = require('node-fetch');
 
 let cache = null;
 let lastFetch = 0;
-const CACHE_TTL = 1000 * 60 * 5;
+const CACHE_TTL = 1000 * 60 * 5; // 5 минут
 
 module.exports = async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -25,6 +24,6 @@ module.exports = async (req, res) => {
 
     return res.status(200).json(data);
   } catch (err) {
-    return res.status(500).json({ error: 'Failed to fetch from Google Sheets' });
+    return res.status(500).json({ error: 'Failed to fetch from Google Sheets', details: err.toString() });
   }
-}; 
+};
