@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const googleScriptUrl = 'https://script.google.com/macros/s/ТВОЙ_ID/exec';
+    const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbzOdPOS3m7BFoFbwOgm2N2svdp9BmEHAmZulJU4XFzmtrX6luHGoa631DHzeMjz5-87/exec';
     const response = await fetch(googleScriptUrl);
     const data = await response.json();
 
